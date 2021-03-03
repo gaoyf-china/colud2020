@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    username: root
+    password: gyf123456
+    url: jdbc:mysql://203.195.139.221:3306/springcloud_study?useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*Mapper.xml
+  type-aliases-package: com.atgaoyf.springcloud.entities #所有实体类所在的包，这样xml文件中实体类不用写全类名
