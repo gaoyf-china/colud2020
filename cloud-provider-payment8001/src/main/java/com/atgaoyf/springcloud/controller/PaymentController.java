@@ -36,8 +36,8 @@ public class PaymentController {
 
     }
 
-    @GetMapping("/find")
-    public CommonResult<Payment> getPaymentById(int id) {
+    @GetMapping("/find/{id}")
+    public CommonResult<Payment> getPaymentById(@PathVariable("id") int id) {
 
         Payment payment = paymentService.getPaymentById(id);
 
@@ -50,8 +50,8 @@ public class PaymentController {
         }
     }
 
-    @DeleteMapping("/remove")
-    public CommonResult<Integer> remove(int id) {
+    @DeleteMapping("/remove/{id}")
+    public CommonResult<Integer> remove(@PathVariable("id") int id) {
 
         int result = paymentService.deleteById(id);
 
