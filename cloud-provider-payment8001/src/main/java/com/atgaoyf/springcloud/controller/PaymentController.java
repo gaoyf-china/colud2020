@@ -21,7 +21,7 @@ public class PaymentController {
     private IPaymentService paymentService;
 
     @PostMapping("/add")
-    public CommonResult<Integer> insert(Payment payment) {
+    public CommonResult<Integer> insert(@RequestBody Payment payment) {
 
         int result = paymentService.insert(payment);
 
