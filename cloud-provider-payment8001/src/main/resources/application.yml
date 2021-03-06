@@ -3,8 +3,11 @@ server:
 
 spring:
   application:
-    name: cloud-payment-service
+    name: cloud-payment
   profiles:
     active: mybatis
 
-devtools:
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7000/eureka
