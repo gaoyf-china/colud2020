@@ -8,6 +8,9 @@ spring:
     active: mybatis
 
 eureka:
+  instance:
+    prefer-ip-address: true #以ip方式注册到注册中心 默认以主机名注册到注册中心
   client:
     service-url:
-      defaultZone: http://localhost:7000/eureka
+      defaultZone: http://127.0.0.1:7000/eureka
+

@@ -5,6 +5,8 @@ spring:
   application:
     name: cloud-order
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://localhost:7000/eureka
