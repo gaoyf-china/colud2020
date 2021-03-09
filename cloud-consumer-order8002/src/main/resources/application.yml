@@ -7,6 +7,9 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
+    instance-id: order-service8002
+    lease-renewal-interval-in-seconds: 30 #发送续约的间隔
+    lease-expiration-duration-in-seconds: 90 #续约超时多少秒剔除服务
   client:
     service-url:
-      defaultZone: http://localhost:7000/eureka
+      defaultZone: http://eureka01:7001/eureka,http://eureka00:7000/eureka

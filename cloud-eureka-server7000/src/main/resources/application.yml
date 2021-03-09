@@ -2,9 +2,12 @@ server:
   port: 7000
 eureka:
   instance:
-    hostname: eureka01
+    hostname: eureka00
   client:
     register-with-eureka: false #不注册自己
     fetch-registry: false #不开启服务检索功能
     service-url:
-      defaultZone: http://eureka00:7000/eureka/
+      defaultZone: http://eureka01:7001/eureka/
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 50000 #剔除无效服务时间
