@@ -19,16 +19,19 @@ public class PaymentServiceImpl implements IPaymentService {
 
     @Override
     public int insert(Payment payment) {
+
         return paymentMapper.insert(payment);
     }
 
     @Override
     public Payment getPaymentById(int id) {
+
         return paymentMapper.getPaymentById(id);
     }
 
     @Override
     public int deleteById(int id) {
+
         return paymentMapper.deleteById(id);
     }
 }
