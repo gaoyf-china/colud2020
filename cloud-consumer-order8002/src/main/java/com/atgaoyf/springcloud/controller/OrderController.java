@@ -2,6 +2,7 @@ package com.atgaoyf.springcloud.controller;
 
 import com.atgaoyf.springcloud.entities.CommonResult;
 import com.atgaoyf.springcloud.entities.Payment;
+import com.atgaoyf.springcloud.service.IPaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -29,6 +30,9 @@ public class OrderController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private IPaymentService paymentService;
+
     @GetMapping("/add")
     public CommonResult<Integer> add(Payment payment) {
 
@@ -38,7 +42,7 @@ public class OrderController {
     @GetMapping("/find/{id}")
     public CommonResult<Payment> getPayment(@PathVariable("id") int id) {
 
-        return restTemplate.getForObject(PAYMENT_URL + "/payment/find/{id}", CommonResult.class, id);
+        return paymentService.getPaymentById(id);
     }
 
     @DeleteMapping("/remove/{id}")
