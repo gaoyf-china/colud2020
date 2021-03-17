@@ -8,6 +8,7 @@ spring:
 ribbon:
   ReadTimeout: 5000
   ConnectTimeout: 5000
+  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 
 eureka:
   instance:
