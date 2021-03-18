@@ -15,5 +15,6 @@ eureka:
     lease-expiration-duration-in-seconds: 90 #续约超时多少秒剔除服务
   client:
     service-url:
-      defaultZone: http://eureka00:7000/eureka,http://eureka01:7001/eureka
+      defaultZone: http://eureka00:7000/eureka
+      #defaultZone: http://eureka00:7000/eureka,http://eureka01:7001/eureka
 

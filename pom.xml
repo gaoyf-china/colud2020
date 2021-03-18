@@ -13,6 +13,7 @@
         <module>cloud-api-commons</module>
         <module>cloud-eureka-server7000</module>
         <module>cloud-eureka-server7001</module>
+        <module>cloud-gateway-server9000</module>
     </modules>
     <packaging>pom</packaging>
 

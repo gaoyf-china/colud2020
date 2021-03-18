@@ -1,0 +1,29 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: payment-service
+          uri: lb://cloud-payment
+          predicates:
+            - Path=/cloud-payment/**
+          filters:
+            - StripPrefix=1
+            - AddRequestHeader=test,1
+            - AddRequestParameter=test2,2
+            - AddRequestParameter=test3,3
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka00:7000/eureka
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
