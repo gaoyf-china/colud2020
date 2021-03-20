@@ -14,6 +14,7 @@
         <module>cloud-eureka-server7000</module>
         <module>cloud-eureka-server7001</module>
         <module>cloud-gateway-server9000</module>
+        <module>cloud-config-server3000</module>
     </modules>
     <packaging>pom</packaging>
 

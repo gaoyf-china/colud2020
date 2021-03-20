@@ -2,19 +2,12 @@ server:
   port: 8001
 
 spring:
-  application:
-    name: cloud-payment
   profiles:
     active: mybatis
 
-eureka:
-  instance:
-    prefer-ip-address: true #以ip方式注册到注册中心 默认以主机名注册到注册中心
-    instance-id: payment-service8001
-    lease-renewal-interval-in-seconds: 30 #发送续约的间隔
-    lease-expiration-duration-in-seconds: 90 #续约超时多少秒剔除服务
-  client:
-    service-url:
-      defaultZone: http://eureka00:7000/eureka
-      #defaultZone: http://eureka00:7000/eureka,http://eureka01:7001/eureka
-
+management:
+  endpoints:
+    web: #暴露所有web端点
+      exposure:
+        include: "*"
+#      base-path: /aa #配置web访问端点的根目录

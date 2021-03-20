@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: payment-service
+  cloud:
+    config:
+      name: payment-service,test
+      label: master
+      profile: dev
+      #uri: http://localhost:3000
+      discovery:
+        enabled: true
+        service-id: config-service
+
+
+eureka:
+  instance:
+    prefer-ip-address: true #以ip方式注册到注册中心 默认以主机名注册到注册中心
+    instance-id: payment-service8001
+    lease-renewal-interval-in-seconds: 30 #发送续约的间隔
+    lease-expiration-duration-in-seconds: 90 #续约超时多少秒剔除服务
+  client:
+    service-url:
+      defaultZone: http://eureka00:7000/eureka
+      #defaultZone: http://eureka00:7000/eureka,http://eureka01:7001/eureka

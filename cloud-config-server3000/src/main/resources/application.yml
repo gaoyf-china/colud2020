@@ -1,0 +1,25 @@
+server:
+  port: 3000
+
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/a1023758195/spring-config.git
+          username: 1023758195@qq.com
+          password: gyf19931020@
+          search-paths: #先去根目录找，然后去配置的路径一个一个找，全部找完了加载，后面找到的先加载，先加载的先生效
+#            - spring-config
+#            - test
+            - '{application}'
+      label: master
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://eureka00:7000/eureka
