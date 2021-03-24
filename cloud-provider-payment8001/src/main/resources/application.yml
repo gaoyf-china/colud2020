@@ -1,9 +1,17 @@
-server:
-  port: 8001
-
 spring:
   profiles:
     active: mybatis
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: gyf123456
+  cloud:
+    stream:
+      bindings:
+        gaoyf:
+          destination: gaoyf.exchange
+          content-type: application/json
 
 management:
   endpoints:
@@ -11,3 +19,4 @@ management:
       exposure:
         include: "*"
 #      base-path: /aa #配置web访问端点的根目录
+

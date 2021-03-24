@@ -5,10 +5,47 @@ spring:
   application:
     name: cloud-order
 
+  cloud:
+    stream:
+      bindings:
+        gaoyf:
+          destination: gaoyf.exchange
+          #group: gaoyf-group
+          content-type: application/json
+          binder: rabbit
+        gaoyftwo:
+          destination: gaoyf.exchange
+          #group: gaoyf-group
+          content-type: application/json
+          binder: rabbit2
+      binders:
+        rabbit2:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 203.195.139.221
+                port: 5672
+                username: admin
+                password: gyf123456
+          defaultCandidate: false
+      default-binder: rabbit2
+
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: gyf123456
+
+
 ribbon:
   ReadTimeout: 5000
   ConnectTimeout: 5000
-  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+payment-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 
 eureka:
   instance:

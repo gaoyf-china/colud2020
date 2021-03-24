@@ -12,16 +12,16 @@
     <artifactId>cloud-provider-payment8001</artifactId>
 
     <dependencies>
-        <!-- 包含了sleuth zipkin 数据链路追踪-->
-       <!-- <dependency>
+        <!-- stream -->
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
+            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
         </dependency>
-        <dependency>&lt;!&ndash; 引用自己定义的api通用包，可以使用Payment支付Entity &ndash;&gt;
-            <groupId>com.eiletxie.springcloud</groupId>
-            <artifactId>cloud-api-commons</artifactId>
-            <version>${project.version}</version>
-        </dependency>-->
+        <!-- bus -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

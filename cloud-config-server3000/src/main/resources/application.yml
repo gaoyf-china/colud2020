@@ -16,6 +16,11 @@ spring:
 #            - test
             - '{application}'
       label: master
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: gyf123456
 
 eureka:
   instance:
@@ -23,3 +28,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka00:7000/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    bus-refresh:
+      enabled: true

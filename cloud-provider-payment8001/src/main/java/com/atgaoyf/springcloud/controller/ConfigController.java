@@ -18,12 +18,12 @@ public class ConfigController {
 
     @Value("${config.version}")
     private String version;
-    @Value("${test.aa}")
-    private String aa;
+    /*@Value("${test.aa}")
+    private String aa;*/
 
     @GetMapping("/version")
     public  String getVersion() {
 
-        return version + "\t" + aa;
+        return version;
     }
 }
