@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author gaoyf
- * @Desc //TODO添加描述
+ * @Desc 自定义轮训策略
  * @Date 2021/3/11 20:01
  */
 @Configuration
