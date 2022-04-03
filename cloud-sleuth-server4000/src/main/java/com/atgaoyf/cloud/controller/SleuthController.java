@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author gaoyf
  * @Desc //TODO添加描述
@@ -24,7 +27,9 @@ public class SleuthController {
     @GetMapping("/find/{id}")
     public CommonResult findPayment(@PathVariable String id) {
 
-        CommonResult<Payment> payment = restTemplate.getForObject("http://payment-service/payment/find/{ee}", CommonResult.class, id);
+        Map<String, String> params = new HashMap<>();
+        params.put("id", id);
+        CommonResult<Payment> payment = restTemplate.getForObject("http://payment-service/payment/find/{id}", CommonResult.class, params);
 
         return payment;
     }

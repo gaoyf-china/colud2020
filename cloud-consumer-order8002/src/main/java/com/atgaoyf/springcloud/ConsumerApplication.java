@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
-@RibbonClient(name = "cloud-payment", configuration = MyRule.class)
+@RibbonClient(name = "payment-service", configuration = MyRule.class)
 public class ConsumerApplication {
 
     public static void main(String[] args) {

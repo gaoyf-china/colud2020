@@ -22,7 +22,7 @@ import java.util.List;
 @RequestMapping("/order")
 public class OrderController {
 
-    public static final String PAYMENT_URL = "http://cloud-payment";
+    public static final String PAYMENT_URL = "http://payment-service";
 
     @Autowired
     private DiscoveryClient discoveryClient;

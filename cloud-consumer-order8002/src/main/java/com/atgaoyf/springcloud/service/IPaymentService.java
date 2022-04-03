@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Desc //TODO添加描述
  * @Date 2021/3/15 10:51
  */
-@FeignClient("cloud-payment")
+@FeignClient("payment-service")
 @RequestMapping("/payment")
 public interface IPaymentService {
 
