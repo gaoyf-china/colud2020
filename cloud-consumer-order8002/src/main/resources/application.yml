@@ -24,7 +24,7 @@ spring:
           environment:
             spring:
               rabbitmq:
-                host: 203.195.139.221
+                host: localhost
                 port: 5672
                 username: admin
                 password: gyf123456
@@ -50,7 +50,7 @@ payment-service:
 eureka:
   instance:
     prefer-ip-address: true
-    instance-id: order-service8002
+    instance-id: ${spring.application.name}:${server.port}
     lease-renewal-interval-in-seconds: 30 #发送续约的间隔
     lease-expiration-duration-in-seconds: 90 #续约超时多少秒剔除服务
   client:
