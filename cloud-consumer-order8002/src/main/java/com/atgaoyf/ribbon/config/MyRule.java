@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author gaoyf
- * @Desc 自定义轮训策略
+ * @Desc 自定义轮训策略222
  * @Date 2021/3/11 20:01
  */
 @Configuration
